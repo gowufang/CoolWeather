@@ -16,7 +16,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="173cf69bd24321e8c8d56138b6c9f8abdd459c0e">
+        sha1="2257ab89909e49bede5d8ded5975181641e2c59c">
         <dex dex="D:\0MSE1\0AndroidStu\Day0903CoolWeather\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_54fb4a9f142e0927153182db6b6091950271df52\classes.dex" />
     </item>
     <item
@@ -84,6 +84,24 @@
     </item>
     <item
         is-multidex="true"
+        jar="D:\0MSE1\0AndroidStu\Day0903CoolWeather\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d1615f199bbf944b2bd8d14819e5684ea6af4247">
+        <dex dex="D:\0MSE1\0AndroidStu\Day0903CoolWeather\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_f6be966a24ac3ea9b4bdacaf493cc58d410d4e0a\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp\3.4.1\c7c4f9e35c2fd5900da24f9872e3971801f08ce0\okhttp-3.4.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="c7c4f9e35c2fd5900da24f9872e3971801f08ce0">
+        <dex dex="D:\0MSE1\0AndroidStu\Day0903CoolWeather\app\build\intermediates\transforms\dex\debug\folders\1000\10\okhttp-3.4.1_a3a718343956c6e4d917a53a4fdd4a4dc134cda5\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.9.0\f824591a0016efbaeddb8300bee54832a1398cfa\okio-1.9.0.jar"
         jumboMode="true"
         optimize="true"
@@ -108,24 +126,6 @@
         revision="25.0.2"
         sha1="efb8cb62d47d157c29d1521daac7eefd4cb881ee">
         <dex dex="D:\0MSE1\0AndroidStu\Day0903CoolWeather\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-25.3.1_625da2427cfaeed91a2001f56a77fb22a0f21ae0\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="D:\0MSE1\0AndroidStu\Day0903CoolWeather\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="c99441f0ee508880ca0b8c5293ad79fd8095b10c">
-        <dex dex="D:\0MSE1\0AndroidStu\Day0903CoolWeather\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_f6be966a24ac3ea9b4bdacaf493cc58d410d4e0a\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp\3.4.1\c7c4f9e35c2fd5900da24f9872e3971801f08ce0\okhttp-3.4.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="c7c4f9e35c2fd5900da24f9872e3971801f08ce0">
-        <dex dex="D:\0MSE1\0AndroidStu\Day0903CoolWeather\app\build\intermediates\transforms\dex\debug\folders\1000\10\okhttp-3.4.1_a3a718343956c6e4d917a53a4fdd4a4dc134cda5\classes.dex" />
     </item>
     <item
         is-multidex="true"

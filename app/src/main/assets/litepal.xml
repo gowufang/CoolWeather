@@ -6,6 +6,6 @@
     <list>
         <mapping class="com.project.ics.day0903coolweather.db.Province"/>
         <mapping class="com.project.ics.day0903coolweather.db.City"/>
-        <mapping class="com.project.ics.day0903coolweather.db.Country"/>
+        <mapping class="com.project.ics.day0903coolweather.db.County"/>
     </list>
 </litepal>
