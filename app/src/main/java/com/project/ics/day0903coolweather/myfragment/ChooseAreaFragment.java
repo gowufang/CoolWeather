@@ -15,6 +15,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.project.ics.day0903coolweather.MainActivity;
 import com.project.ics.day0903coolweather.R;
 import com.project.ics.day0903coolweather.WeatherActivity;
 import com.project.ics.day0903coolweather.db.City;
@@ -40,7 +41,7 @@ import okhttp3.Response;
 public class ChooseAreaFragment  extends Fragment {
     public static final int LEVEL_PROVINCE=0;
     public static final int LEVEL_CITY=1;
-    public static final int LEVEL_COUNTRY=2;
+    public static final int LEVEL_COUNTY=2;
     private ProgressDialog progressDialog;
     private TextView titleText;
     private Button backBtn;
@@ -75,22 +76,28 @@ public class ChooseAreaFragment  extends Fragment {
         super.onActivityCreated(savedInstanceState);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-//                Toast.makeText(getActivity(),"clicked",Toast.LENGTH_SHORT).show();
-
-                if(currentLevel==LEVEL_PROVINCE){
-                    selectedProvince=provinceList.get(position);
+            public void onItemClick(AdapterView<?> parent, View view, int position,
+                                    long id) {
+                if (currentLevel == LEVEL_PROVINCE) {
+                    selectedProvince = provinceList.get(position);
                     queryCities();
-                }else if(currentLevel==LEVEL_CITY){
-                    selectedCity=cityList.get(position);
+                } else if (currentLevel == LEVEL_CITY) {
+                    selectedCity = cityList.get(position);
                     queryCounties();
-                }else if (currentLevel==LEVEL_COUNTRY){
-                    String weatherId=countyList.get(position).getWeatherId();
-                    Intent intent=new Intent(getActivity(), WeatherActivity.class);
-                    intent.putExtra("weather_id",weatherId);
-                    startActivity(intent);
-                    getActivity().finish();
+                } else if (currentLevel == LEVEL_COUNTY) {
+                    String weatherId = countyList.get(position).getWeatherId();
+                    if (getActivity() instanceof MainActivity) {
+                        Intent intent = new Intent(getActivity(), WeatherActivity.
+                                class);
+                        intent.putExtra("weather_id", weatherId);
+                        startActivity(intent);
+                        getActivity().finish();
+                    } else if (getActivity() instanceof WeatherActivity) {
+                        WeatherActivity activity = (WeatherActivity) getActivity();
+                        activity.drawerLayout.closeDrawers();
+                        activity.swipeRefreshLayout.setRefreshing(true);
+                        activity.requestWeather(weatherId);
+                    }
                 }
             }
         });
@@ -98,7 +105,7 @@ public class ChooseAreaFragment  extends Fragment {
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(currentLevel==LEVEL_COUNTRY){
+                if(currentLevel==LEVEL_COUNTY){
                     queryCities();
                     
                 }else if(currentLevel==LEVEL_CITY){
@@ -212,7 +219,7 @@ public class ChooseAreaFragment  extends Fragment {
             }
             adapter.notifyDataSetChanged();
             listView.setSelection(0);
-            currentLevel=LEVEL_COUNTRY;
+            currentLevel=LEVEL_COUNTY;
         }else{
             int provinceCode=selectedProvince.getProvinceCode();
             int cityCode=selectedCity.getCityCode();
