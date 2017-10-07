@@ -1,6 +1,5 @@
 package com.project.ics.day0903coolweather;
 
-import android.app.Activity;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Build;
@@ -9,6 +8,7 @@ import android.preference.PreferenceManager;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -39,7 +39,7 @@ import okhttp3.Response;
  *在活动中去请求天气数据， 以及将数据展示到
  界面上
  */
-public class WeatherActivity extends Activity {
+public class WeatherActivity extends AppCompatActivity {
 
     private ScrollView weatherLayout;
     private TextView titleCity;
@@ -162,7 +162,7 @@ public class WeatherActivity extends Activity {
         });
     }
 
-    private void requestWeather(final String weatherId) {
+    public void requestWeather(final String weatherId) {
 
         String weatherUrl="https://free-api.heweather.com/v5/weather?city="+weatherId+"&key=88bab21abcf943879231c43c60ab0684";
         HttpUtil.sendOkHttpRequest(weatherUrl, new Callback() {
